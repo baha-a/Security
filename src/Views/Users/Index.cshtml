@@ -1,0 +1,42 @@
+﻿@model ITech.Security.Models.UsersViewModel
+
+<script src="~/Scripts/SiteRender.js"> </script>
+<script type="text/javascript">
+    $(document).ready(function () { UserIndexPage(); });
+</script>
+
+
+<div class="row">
+    <div id="divForm">
+        <h1>Users</h1>
+        <div id="divMain" >
+            <table id="jqGrid" dir="rtl" ></table>
+            <div id="jqGridPager"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-6">
+        <form method="get" action="/users/AddUser/" class="form-group">
+            <div class="row">
+                <div class="col-md-2">
+                    User
+                </div>
+                <div class="col-md-8">
+                    <select name="username" class="form-control">
+                        @foreach (var u in Model.UsersInfo)
+                        {
+                            <option value="@u.UserName"> @u.UserName ( @u.FirstName @u.LastName )</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-success"> add </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

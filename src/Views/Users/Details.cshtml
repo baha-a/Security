@@ -1,0 +1,54 @@
+﻿<input id="urlId" type="hidden" value="@Url.RequestContext.RouteData.Values["id"]" />
+<script src="~/Scripts/SiteRender.js"> </script>
+<script type="text/javascript">
+    $(document).ready(function () { UserDetailsPage(); });
+</script>
+
+
+
+<h2>User Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> Id </dt>
+        <dd id="id"> </dd>
+
+        <dt> UserName </dt>
+        <dd id="username"> </dd>
+
+        <dt> FirstName </dt>
+        <dd id="firstname"> </dd>
+
+        <dt> LastName </dt>
+        <dd id="lastname"> </dd>
+    </dl>
+</div>
+
+<hr/>
+
+<div class="row">
+    <div class="col-md-2">
+        
+    </div>
+    <div class="col-md-8 box">
+        <div>
+            <label>Roles</label>
+            <hr/>
+            <div class="scrollable-box userRoles">
+
+            </div>
+            <hr/>
+            <div class="marginTop">
+                <form method="get" class="form-group addRoleForm">
+                    <label>
+                        Add Roles
+                        <select name="roleid" required="required" class="form-control selectOtherRoles">
+                        </select>
+                    </label>
+                    <button class="btn btn-success btn-sm" class="form-control"> add </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

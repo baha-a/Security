@@ -1,0 +1,127 @@
+﻿html *
+{
+    /* font-size: 16px !important; */
+}
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 580px;
+}
+
+.box {
+    background: #f9f9f9;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 20px;
+    padding-left: 50px;
+    padding-bottom: 20px;
+    margin: 10px;
+}
+
+.scrollable-box {
+    overflow-y: scroll;
+    max-height: 240px;
+}
+
+label {
+    display: block;
+}
+
+hr {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.hoverable {
+    background: inherit;
+    border-bottom: 1px solid lightgray;
+    padding: 5px;
+}
+
+.hoverable:hover {
+    background: skyblue;
+}
+
+
+.loader {
+    position:   fixed;
+
+    z-index: 10000;
+    border: 6px dashed #000000;
+    border-radius: 50%;
+
+    width: 50px;
+    height: 50px;
+    left: 45%;
+    top: 20%;
+
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    background-color: #f1f1f1;
+}
+
+div.tab button {
+    background-color: #f0f0f0;
+    float: left;
+    border:2px solid #f0f0f0;
+    border-bottom: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+}
+
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+div.tab button.active {
+    background-color: #ffffff;
+    border:2px solid black;
+    border-bottom: none;
+}
+
+.TabPageContent {
+    display: none;
+
+    margin-top: 0;
+}
+
+.marginTop {
+    margin-top: 20px;
+    padding-top: 15px;
+    
+}

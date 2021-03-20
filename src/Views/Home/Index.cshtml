@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ITech.Security.Models.SectionViewModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1></h1>
+    <div class="lead" dir="rtl">
+        @if (Model == null || Model.Any() == false)
+        {
+            <i>nothing to show here</i>
+        }
+        else
+        {
+            <div class="row">
+           @foreach (var s in Model)
+            {
+                <div class="col-md-3" style="border: 1px dashed lightgrey">
+                    <p>
+                        <i style="color: gray">@s.Section.Name</i>
+                    </p>
+                    <p>
+                        <ul>
+                            @foreach (var v in s.Views)
+                            {
+                                <li>
+                                    <a href="@v.Url" target="@(v.SameWindow ? "" : "_blank")"> @v.Name </a>
+                                </li>
+                            }
+                        </ul>
+                    </p>
+                </div>
+            }
+            </div>
+        }
+    </div>
+</div>
+
+<div class="row">
+</div>

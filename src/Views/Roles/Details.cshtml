@@ -1,0 +1,110 @@
+﻿@{
+    string tapname = "userTabButton";
+    if (ViewBag.Tab == "view")
+    {
+        tapname = "viewTabButton";
+    }
+    else if (ViewBag.Tab == "operation")
+    {
+        tapname = "operationTabButton";
+    }
+}
+<script src="~/Scripts/SiteRender.js"> </script>
+<script type="text/javascript">
+    $(document).ready(function() { RoleDetailesPage(); });
+</script>
+
+<input type="hidden" id="urlId" value="@Url.RequestContext.RouteData.Values["id"]" />
+<input type="hidden" id="urlTapPage" value="@tapname" />
+
+<h2>Role Details</h2>
+<div class="loader"></div>
+
+<hr />
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> Id </dt> <dd id="id"> </dd>
+        <dt> Application </dt> <dd id="applicationName"> </dd>
+        <dt> Role Name </dt> <dd id="roleName"> </dd>
+        <dt> Description </dt> <dd id="description"> </dd>
+    </dl>
+</div>
+
+<hr />
+
+<div class="tab">
+    <button id="userTabButton" class="TabPageLinks active col-md-4" data-tab="user" data-tabname="UsersTab">User</button>
+    <button id="operationTabButton" class="TabPageLinks col-md-4" data-tab="operation" data-tabname="OperationTab">Operation</button>
+    <button id="viewTabButton" class="TabPageLinks col-md-4" data-tab="view" data-tabname="ViewTab">Views</button>
+</div>
+
+<div class="row">
+    <div class="col-md-12 box TabPageContent" id="UsersTab">
+        <div>
+            <label>Users</label>
+            <hr />
+            <div class="roleUsers">
+            </div>
+            <div class="marginTop">
+                <form id="addUser" class='form-group' method='get'>
+                    <label>
+                        Add Users
+                        <select id="addUserSelect" name='UserName' required='required' class='form-control'>
+                        </select>
+                    </label>
+                    <button type='submit' class='btn btn-success btn-sm' class='form-control'> add </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 box TabPageContent" id="OperationTab">
+        <div>
+            <label>Operations</label>
+            <hr />
+            <div class="roleOperations">
+            </div>
+
+            <div class="marginTop">
+                <form id="addOperation" method="get" class="form-group">
+                    <div>
+                        <label>
+                            Add Operation
+                            <select id="addOperationSelect" name="operationId" required="required" class="form-control"></select>
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            Scope
+                            <textarea name="json" class="form-control"> </textarea>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-sm" class="form-control"> add </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 box TabPageContent" id="ViewTab">
+        <div>
+            <label>Views</label>
+            <hr />
+            <div class="roleViews">
+            </div>
+
+            <div class="marginTop">
+                <form id="addView" method="get" class="form-group">
+                    <div>
+                        <label>
+                            Add View
+                            <select id="addViewSelect" name="viewId" required="required" class="form-control">
+                                
+                            </select>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-sm" class="form-control"> add </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
